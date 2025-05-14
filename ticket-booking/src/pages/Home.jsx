@@ -45,20 +45,27 @@ const Home = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {events.map(event => (
-            <div key={event.id} className="bg-white rounded-lg shadow hover:shadow-lg transition">
-            <img src={event.thumbnail} alt={event.title} className="rounded-t-lg h-48 w-full object-cover" />
+        {sortedEvents.map(event => (
+          <div key={event.id} className="bg-white rounded-lg shadow hover:shadow-lg transition">
+            <img
+              src={event.thumbnail}
+              alt={event.title}
+              className="rounded-t-lg h-48 w-full object-cover"
+            />
             <div className="p-4">
-                <h3 className="text-xl font-semibold">{event.title}</h3>
-                <p className="text-gray-500 text-sm">{event.date} | {event.location}</p>
-                <p className="font-bold mt-2">${event.price}</p>
-                <Link to={`/event/${event.id}`} className="inline-block mt-3 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+              <h3 className="text-xl font-semibold">{event.title}</h3>
+              <p className="text-gray-500 text-sm">{event.date} | {event.location}</p>
+              <p className="font-bold mt-2">${event.price}</p>
+              <Link
+                to={`/event/${event.id}`}
+                className="inline-block mt-3 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+              >
                 View Details
-                </Link>
+              </Link>
             </div>
-            </div>
+          </div>
         ))}
-        </div>
+      </div>
     </div>
   );
 };
