@@ -7,7 +7,6 @@ const cartReducer = (state, action) => {
     case "ADD_TO_CART":
       const existingItem = state.items.find(item => item.id === action.payload.id);
       if (existingItem) {
-        // Increase quantity if item already in cart
         return {
           ...state,
           items: state.items.map(item =>
@@ -17,7 +16,6 @@ const cartReducer = (state, action) => {
           ),
         };
       } else {
-        // Add new item to cart
         return {
           ...state,
           items: [...state.items, action.payload],
@@ -35,4 +33,30 @@ const cartReducer = (state, action) => {
         ...state,
         items: state.items.map(item =>
           item.id === action.payload.id
-            ? { ...item, quantity:
+            ? { ...item, quantity: action.payload.quantity }
+            : item
+        ),
+      };
+
+    case "CLEAR_CART":
+      return { ...state, items: [] };
+
+    default:
+      return state;
+  }
+};
+
+
+export const CartProvider = ({ children }) => {
+    const [cartState, dispatch] = useReducer(cartReducer, { items: [] });
+  
+    const total = cartState.items.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  
+    return (
+      <CartContext.Provider value={{ cartState, dispatch, total }}>
+        {children}
+      </CartContext.Provider>
+    );
+  };
+  
+  export const useCart = () => useContext(CartContext);
