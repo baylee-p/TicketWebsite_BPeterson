@@ -20,21 +20,22 @@ const Home = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">Upcoming Events</h1>
+      <h1 className="text-3xl font-bold text-green-800 mb-6">Upcoming Events</h1>
 
+      {/* Search & Sort Bar */}
       <div className="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
         <input
           type="text"
           placeholder="Search events..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="border border-gray-300 rounded-md px-4 py-2 w-full"
+          className="border border-green-300 rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-green-500"
         />
 
         <select
           value={sortOption}
           onChange={(e) => setSortOption(e.target.value)}
-          className="border border-gray-300 rounded-md px-4 py-2 w-full"
+          className="border border-green-300 rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-green-500"
         >
           <option value="">Sort by</option>
           <option value="priceAsc">Price: Low to High</option>
@@ -44,6 +45,7 @@ const Home = () => {
         </select>
       </div>
 
+      {/* Event Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {sortedEvents.map(event => (
           <div key={event.id} className="bg-white rounded-lg shadow hover:shadow-lg transition">
@@ -53,12 +55,12 @@ const Home = () => {
               className="rounded-t-lg h-48 w-full object-cover"
             />
             <div className="p-4">
-              <h3 className="text-xl font-semibold">{event.title}</h3>
+              <h3 className="text-xl font-semibold text-green-700">{event.title}</h3>
               <p className="text-gray-500 text-sm">{event.date} | {event.location}</p>
-              <p className="font-bold mt-2">${event.price}</p>
+              <p className="font-bold text-emerald-600 mt-2">${event.price}</p>
               <Link
                 to={`/event/${event.id}`}
-                className="inline-block mt-3 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+                className="inline-block mt-3 bg-emerald-500 text-white px-4 py-2 rounded hover:bg-emerald-600 transition"
               >
                 View Details
               </Link>

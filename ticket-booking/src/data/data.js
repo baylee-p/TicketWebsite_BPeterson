@@ -27,37 +27,37 @@ const events = [
   {
     id: 3,
     title: "Food Festival",
-    description: "Enjoy many homemade cuisines from around the world.",
-    date: "2025-08-02",
-    location: "Wichita",
-    price: 20,
+    description: "Taste dishes from over 50 international cuisines.",
+    date: "2025-08-20",
+    location: "Chicago",
+    price: 30,
     thumbnail: foodFestival
   },
   {
     id: 4,
-    title: "Marathon",
-    description: "Test your skills and athletic ability in this challenging marathon.",
-    date: "2025-08-31",
-    location: "Dallas",
-    price: 40,
+    title: "Marathon 2025",
+    description: "Join thousands of runners in this annual marathon event.",
+    date: "2025-09-10",
+    location: "Boston",
+    price: 20,
     thumbnail: marathon
   },
   {
     id: 5,
     title: "Tech Conference",
-    description: "Hear stories and get inspired by technology and the great minds surrounding it.",
-    date: "2025-11-05",
-    location: "Kansas CIty",
-    price: 25,
+    description: "Attend keynotes and workshops by leading tech experts.",
+    date: "2025-10-05",
+    location: "Seattle",
+    price: 120,
     thumbnail: techConference
   },
   {
     id: 6,
     title: "Jazz Night",
-    description: "Listen to some of New Orleans best musicians as you have drinks on us.",
-    date: "2025-06-15",
+    description: "Enjoy a night of smooth jazz performances in an intimate setting.",
+    date: "2025-11-18",
     location: "New Orleans",
-    price: 30,
+    price: 55,
     thumbnail: jazzNight
   },
 ];

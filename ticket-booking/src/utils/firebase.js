@@ -6,7 +6,7 @@ const firebaseConfig = {
     apiKey: "AIzaSyAw2tQ6B0iPkRwQ538XSCzLYySObAfb7Gg",
     authDomain: "ticketeer-a8a89.firebaseapp.com",
     projectId: "ticketeer-a8a89",
-    storageBucket: "ticketeer-a8a89.firebasestorage.app",
+    storageBucket: "ticketeer-a8a89.appspot.com",
     messagingSenderId: "512715778059",
     appId: "1:512715778059:web:9da844ec93f83db77dff0e",
     measurementId: "G-HM6JXBSS52"
